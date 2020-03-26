@@ -23,7 +23,7 @@ use std::slice::{from_raw_parts, from_raw_parts_mut};
 /// any type that includes a reference.
 ///
 /// Implementing this trait guarantees that it is safe to instantiate the struct with random data.
-pub unsafe trait ByteValued: Copy + Default + Send + Sync {
+pub unsafe trait ByteValued: Copy + Default + Send + Sync + Sized {
     /// Converts a slice of raw data into a reference of `Self`.
     ///
     /// The value of `data` is not copied. Instead a reference is made from the given slice. The
